@@ -1,0 +1,5 @@
+venv/
+.env
+chromadb/
+__pycache__/
+*.pyc
