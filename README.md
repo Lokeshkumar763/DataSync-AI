@@ -61,26 +61,41 @@ RAG Answer
 
 The internet reimbursement is ₹1,200 per month.
 
-The answer is generated using relevant information retrieved from the policy handbook.
+The answer is generated using relevant information retrieved from the policy handbook rather than relying only on the model's general knowledge.
 
 RAG vs Without RAG
 Without RAG
-Question → Gemini → Answer
+Question
+   ↓
+Gemini
+   ↓
+Answer
 
-The model receives only the question and does not have access to the policy handbook.
+Without RAG, the model receives only the user's question and does not have access to the policy handbook.
 
 With RAG
-Question → Embedding → ChromaDB → Relevant Chunks → Gemini → Grounded Answer
+Question
+   ↓
+Query Embedding
+   ↓
+ChromaDB
+   ↓
+Relevant Chunks
+   ↓
+Gemini
+   ↓
+Grounded Answer
 
-RAG provides the model with relevant document context, making it suitable for answering questions about private or domain-specific information.
+With RAG, relevant document content is retrieved and provided to the model as context. This allows the system to answer questions using private or domain-specific information contained in the document.
 
-A separate test_without_rag.py script was created for comparison. The live Without-RAG test could not be completed during final testing because the Gemini free-tier generation quota was temporarily exhausted (429 RESOURCE_EXHAUSTED).
+A separate test_without_rag.py script is included in the repository for comparison.
+
+During final testing, the live Without-RAG generation request could not be completed because the Gemini API free-tier generation quota was temporarily exhausted (429 RESOURCE_EXHAUSTED). The RAG pipeline itself was successfully tested with grounded document-based answers.
 
 Project Structure
-RAG/
+DataSync-AI/
 ├── documents/
 │   └── test.pdf
-├── chromadb/
 ├── src/
 │   ├── __init__.py
 │   ├── document_loader.py
@@ -89,31 +104,52 @@ RAG/
 │   └── rag_pipeline.py
 ├── templates/
 │   └── index.html
-├── chunker.py
 ├── app.py
 ├── test_without_rag.py
-├── test_gemini.py
 ├── requirements.txt
-├── .env
 ├── .gitignore
 └── README.md
+Excluded from Git
+
+The following local files and folders are intentionally excluded from the public repository:
+
+venv/
+.env
+chromadb/
+__pycache__/
+*.pyc
+
+chromadb/ contains the locally generated vector database and can be recreated from the document processing pipeline.
+
 How to Run
-1. Install Dependencies
+1. Clone the Repository
+git clone https://github.com/Lokeshkumar763/DataSync-AI.git
+cd DataSync-AI
+2. Create and Activate a Virtual Environment
+python -m venv venv
+
+Windows PowerShell:
+
+venv\Scripts\Activate.ps1
+3. Install Dependencies
 pip install -r requirements.txt
-2. Configure Gemini API
+4. Configure Gemini API
 
 Create a .env file in the project root:
 
 GEMINI_API_KEY=your_api_key_here
-3. Run the Application
+
+Never commit the API key to GitHub.
+
+5. Run the Application
 python app.py
-4. Open the Application
+6. Open the Application
 http://127.0.0.1:5000
 Security
 
 The Gemini API key is stored in an environment variable and should never be committed to GitHub.
 
-The following files and folders should be excluded using .gitignore:
+The following are excluded using .gitignore:
 
 venv/
 .env
