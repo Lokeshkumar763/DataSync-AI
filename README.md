@@ -1,18 +1,17 @@
-# DataSync AI – RAG Policy Assistant
+# DataSync AI – Document Intelligence System!
 
 DataSync AI is a document intelligence system built using **Retrieval-Augmented Generation (RAG)** to answer questions from an employee policy handbook. The system retrieves relevant information from the document using semantic search and provides grounded responses using Google's Gemini API.
 
-## Internship Task 3 – RAG System
+## TOPIC : Retrieval-Augmented Generation (RAG)
 
 This project was developed as part of the **Generative AI Internship at Valentius Kryptix**.
 
-## Objective
+## OBJECTIVE
 
 Build a RAG system that can process a real document, split it into meaningful chunks, generate embeddings, store them in a vector database, retrieve relevant information, and use the retrieved context to generate grounded answers.
 
-## RAG Pipeline
+## WORKFLOW
 
-```text
 PDF Document
      ↓
 Text Extraction
@@ -31,7 +30,8 @@ Gemini LLM
      ↓
 Grounded Answer
 
-Technologies Used
+## TECHNICAL STACK:
+
 Python
 Flask
 Google Gemini API
@@ -42,7 +42,9 @@ python-dotenv
 HTML
 CSS
 JavaScript
-Key Features
+
+## KEY FEATURES:
+
 PDF document processing
 Overlapping text chunking
 Semantic embeddings
@@ -52,19 +54,21 @@ Context injection into the LLM prompt
 Grounded answers based on retrieved content
 Flask-based web interface
 Protection against unsupported or invented answers
-Example
-Question
+
+## EXAMPLE QUESTIONS:
 
 How much is the internet reimbursement?
 
-RAG Answer
+RAG Answer;
 
 The internet reimbursement is ₹1,200 per month.
 
 The answer is generated using relevant information retrieved from the policy handbook rather than relying only on the model's general knowledge.
 
-RAG vs Without RAG
-Without RAG
+## RAG vs WITHOUT RAG:
+
+• Without RAG;
+
 Question
    ↓
 Gemini
@@ -73,7 +77,8 @@ Answer
 
 Without RAG, the model receives only the user's question and does not have access to the policy handbook.
 
-With RAG
+• With RAG;
+
 Question
    ↓
 Query Embedding
@@ -92,7 +97,8 @@ A separate test_without_rag.py script is included in the repository for comparis
 
 During final testing, the live Without-RAG generation request could not be completed because the Gemini API free-tier generation quota was temporarily exhausted (429 RESOURCE_EXHAUSTED). The RAG pipeline itself was successfully tested with grounded document-based answers.
 
-Project Structure
+## PROJECT STRUCTURE:
+
 DataSync-AI/
 ├── documents/
 │   └── test.pdf
@@ -128,7 +134,7 @@ cd DataSync-AI
 2. Create and Activate a Virtual Environment
 python -m venv venv
 
-Windows PowerShell:
+## WINDOWS POWERSHELL:
 
 venv\Scripts\Activate.ps1
 3. Install Dependencies
@@ -158,6 +164,8 @@ __pycache__/
 *.pyc
 Learning Outcome
 
+## GAINED EXPERIENCE:
+
 This task provided practical experience with:
 
 RAG architecture
@@ -173,6 +181,7 @@ Gemini API integration
 Flask-based AI applications
 Internship
 
+## ABOUT
 Role: Generative AI Intern
 Organization: Valentius Kryptix
-Task: Task 3 – RAG System
+Topic: RAG System
