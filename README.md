@@ -276,14 +276,6 @@ Through this project, I gained practical experience in:
 
 ---
 
-## Author
-
-**Lokeshkumar S**
-
-B.Sc. Artificial Intelligence and Data Science Graduate
-
----
-
 ## Repository
 
 [DataSync AI – GitHub Repository](https://github.com/Lokeshkumar763/DataSync-AI)
