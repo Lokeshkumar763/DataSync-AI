@@ -267,10 +267,12 @@ Through this project, I gained practical experience in:
 
 ## Internship Context
 
-**Role:** Generative AI Intern
-**Organization:** Valentius Kryptix
-**Project:** DataSync AI
-**Focus Area:** Retrieval-Augmented Generation (RAG)
+| Details | Information |
+|---|---|
+| Role | Generative AI Intern |
+| Organization | Valentius Kryptix |
+| Project | DataSync AI |
+| Focus Area | Retrieval-Augmented Generation (RAG) |
 
 ---
 
